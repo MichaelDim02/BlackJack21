@@ -8,7 +8,22 @@
 #include "src/sha1.h"
 #include "src/sha256.h"
 #include "src/sha512.h"
+
 using namespace std;
+
+
+/*
+ *
+ *		BLACKJACK21 PASSWORD CRACKING PROGRAM VERSION 0.3
+ *
+ *	This is the C++ version of Blackjack (originally in python)
+ *	Written by Michael Constantine Dimopoulos
+ *	Software is given as it is. The developer is not responsible for any damage caused
+ *	by misuse of this tool. Use responsibly.
+ *
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
 
 // Global Variables //
 bool verbose;
@@ -19,16 +34,18 @@ void sha1_crack(string hash, string file);
 void sha256_crack(string hash, string file);
 void sha512_crack(string hash, string file);
 
-// CODE //
+//  / ~ ~ ~ ~ CODE ~ ~  ~ ~ \  \\
 
-//INTERFACE//
+// INTERFACE //
 void interface() {
-	cout << "BlackJack21 Password Cracker v0.2" << endl;
+	cout << "BlackJack21 Password Cracking program v0.3" << endl;
 	cout << "Written by Michael C. Dim. in C++ - Thessaloniki, Greece 2017" << endl;
 	cout << "Python version: github.com/MichaelDim02/BlackJack" << endl;
 	cout << "Hashes included: MD5, SHA1, SHA256, SHA512" << endl << endl;
 	cout << "Usage: ./jack [HASH-TYPE] [HASH] [DICTIONARY] [-v]" << endl;
 }
+
+// MAIN //
 int main(int argc, char* argv[]) {
 	if(argc < 4) {
 		interface();
@@ -43,15 +60,26 @@ int main(int argc, char* argv[]) {
 			} else {
 				verbose = false;
 			}
+			cout << "BlackJack21 Password Cracking program v0.3" << endl;
+			cout << "Written by Michael C. Dim. in C++ - Thessaloniki, Greece 2017" << endl;
+			cout << "Dictionary: " << dict << endl;
 			if(type == "MD5" || type == "md5"){
+				cout << "Hashing algorithm: MD5" << endl;
+				cout << "Cracking..." << endl << endl;
 				md5_crack(hash, dict);
 			}else if(type == "SHA1" || type == "sha1"){
+				cout << "Hashing algorithm: SHA1" << endl;
+                                cout << "Cracking..." << endl << endl;
 				sha1_crack(hash, dict);
 			}else if(type == "SHA256" || type == "sha256"){
+				cout << "Hashing algorithm: sh256" << endl;
+                                cout << "Cracking..." << endl << endl;
 				sha256_crack(hash, dict);
 			}else if(type == "SHA512" || type == "sha512"){
-				sha512_crack(hash, dict);
+				cout << "Hashing algorithm: sh512" << endl;
+                                cout << "Cracking..." << endl << endl;
 			}
+			cout << "Cracking..." << endl;
 		} else {
 			interface();
 			cout << endl << "File could not be found." << endl;
@@ -60,6 +88,8 @@ int main(int argc, char* argv[]) {
 		interface();
 	}
 }
+
+// CRACKING //
 void md5_crack(string hash, string filename) {
 	int tries = 0;
 	std::ifstream file(filename);
