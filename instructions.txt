@@ -1,5 +1,5 @@
 Blackjack21 Password Cracking software (current version: 0.3)
-Written by Michael Constantine Dimopoulos 2017
+Written by MichaelDim02 2017
 https://github.com/MichaelDim02/BlackJack21.git
 
 
