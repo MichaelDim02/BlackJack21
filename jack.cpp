@@ -17,7 +17,6 @@ using namespace std;
  *		BLACKJACK21 PASSWORD CRACKING PROGRAM VERSION 0.3
  *
  *	This is the C++ version of Blackjack (originally in python)
- *	Written by Michael Constantine Dimopoulos
  *	Software is given as it is. The developer is not responsible for any damage caused
  *	by misuse of this tool. Use responsibly.
  *
@@ -39,7 +38,7 @@ void sha512_crack(string hash, string file);
 // INTERFACE //
 void interface() {
 	cout << "BlackJack21 Password Cracking program v0.3" << endl;
-	cout << "Written by Michael C. Dim. in C++ - Thessaloniki, Greece 2017" << endl;
+	cout << "Written by MichaelDim. in C++ - Greece 2017" << endl;
 	cout << "Python version: github.com/MichaelDim02/BlackJack" << endl;
 	cout << "Hashes included: MD5, SHA1, SHA256, SHA512" << endl << endl;
 	cout << "Usage: ./jack [HASH-TYPE] [HASH] [DICTIONARY] [-v]" << endl;
