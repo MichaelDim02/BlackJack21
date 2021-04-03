@@ -1,0 +1,44 @@
+.\" Manpage for Blackjack
+
+.TH man 8 "03 Apr 2021" "2.0" "Blackjack21 manual page"
+.SH NAME
+Blackjack21 \- Minimal password cracking utility
+.SH SYNOPSIS
+jack [HASH-TYPE] [HASH] [DICTIONARY] [OPTIONS]
+.SH DESCRIPTION
+Blackjack21 is a minimal offline password cracking utility. It uses a dictionary to compare the hash output of its lines to the hash provided by the user.
+Current version: 2.0
+
+.B
+Supported Hashes:
+.IP \[bu] 2
+MD5
+.IP \[bu]
+SHA1
+.IP \[bu]
+SHA256
+.IP \[bu]
+SHA512
+
+
+.SH OPTIONS
+-v	Verbose (not recommended)
+
+.SH EXAMPLES
+.IP \[bu] 2
+.B
+jack md5 4ff9fc6e4e5d5f590c4f2134a8cc96d1 wordlist.txt
+ - This will attempt to crack the hash md5 provided with the dictionary "wordlist.txt"
+.IP \[bu] 2
+.B
+jack SHA1 596727c8a0ea4db3ba2ceceedccbacd3d7b371b8 dict.txt -v
+ - This will attempt to crack the SHA1 hash provided with dict.txt. It will also display all the attempts (-v flag).
+
+.SH AUTHOR
+Michael Constantine Dimopoulos	https://mcdim.xyz
+
+.SH SEE ALSO
+Houndsniff	https://mcdim.xyz/projects/hs.html
+
+.SH LICENSE
+GNU Public License 3.0 (GPL-3.0)
