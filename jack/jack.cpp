@@ -17,13 +17,10 @@
 
 using namespace std;
 
-/* Global Variables */
 bool verbose;
 
-/* Function prototypes */
 void crack(string hash, string file, int alg);
 
-/* Interface */
 void
 interface(int f)
 {
@@ -34,7 +31,6 @@ interface(int f)
 			"Usage: ./jack [HASH-TYPE] [HASH] [DICTIONARY] [-v]\n");
 }
 
-/* Main */
 int
 main(int argc, char* argv[])
 {
@@ -68,7 +64,6 @@ main(int argc, char* argv[])
 	}
 }
 
-/* CRACKING */
 void
 crack(string hash, string filename, int alg)
 {
