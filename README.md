@@ -10,9 +10,5 @@ cd jack/ && sudo make install
 Read the manpage for more information
 
 ```
-man extra/manpage.1
-```
-or
-```
 man jack
 ```
